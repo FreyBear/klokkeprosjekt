@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Ingve Bjørnå",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 172.8, "left": 158.44, "attrs": {} },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": 46.46,
+      "left": -9.5,
+      "attrs": { "pixels": "77" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 175.2,
+      "left": -94.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ring1:DIN", "esp:25", "green", [ "v48", "h-163.2", "v-374.4" ] ],
+    [ "ring1:VCC", "esp:5V", "red", [ "v38.4", "h-96", "v-115.2" ] ],
+    [ "esp:GND.1", "ring1:GND", "black", [ "h-38.25", "v153.6", "h76.8" ] ],
+    [ "esp:26", "bz1:2", "green", [ "h0" ] ],
+    [ "esp:GND.1", "bz1:1", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

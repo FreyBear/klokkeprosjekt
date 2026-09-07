@@ -1,0 +1,12 @@
+# Arduino CLI og andre lokale byggeartefakter
+build/
+.pio/
+
+# Kompilerte firmwarefiler hvis de bygges i prosjektmappen
+*.bin
+*.elf
+*.hex
+
+# Lokale OS-filer
+.DS_Store
+Thumbs.db

@@ -478,6 +478,7 @@ bool hentInternetTid() {
   //         forsok++;
   //       }
   //       if (WiFi.status() != WL_CONNECTED) return false;
+  // Tips: Skriv gjerne ut en Serial-bekreftelse og WiFi.localIP() etter tilkobling.
   // Tips: For norsk tid (GMT+1 og 1 time sommertid):
   //       configTime(3600, 3600, "pool.ntp.org");
   // Tips: Verifiser at tiden er synkronisert med getLocalTime():

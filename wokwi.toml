@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "build/klokkeprosjekt_26.ino.bin"
+elf = "build/klokkeprosjekt_26.ino.elf"

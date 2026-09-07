@@ -23,6 +23,10 @@ Koble ESP32 til NeoPixel-ringen og eventuell buzzer slik:
 
 > **Tips:** Har dere ikke buzzer koblet til? Ingen fare — funksjonen `spillMelodi` kan fint blinke LED-ringen med farger i stedet for å spille lyd!
 
+## Simulering med Wokwi & VS Code (Valgfritt)
+
+Vil du teste koden direkte i VS Code uten fysisk ESP32/LED-ring? Se **[WOKWI_GUIDE.md](WOKWI_GUIDE.md)** for hvordan du setter opp Wokwi Simulator med Arduino CLI.
+
 ## Hva skal jeg gjøre?
 
 Se **[ELEVOPPGAVER.md](ELEVOPPGAVER.md)** for:
