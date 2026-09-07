@@ -20,8 +20,8 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 // ========== WIFI KONFIGURASJON ==========
-const char* ssid = "1ELER";      // WiFi navn
-const char* password = "hemmelig";               // WiFi passord
+const char* ssid = "Wokwi-GUEST";      // WiFi navn
+const char* password = "";               // WiFi passord
 
 // ========== ENUMS OG DATASTRUKTURER ==========
 enum Fag {
