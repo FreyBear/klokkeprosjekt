@@ -28,7 +28,13 @@ brew install arduino-cli
 ## 2. Engangskonfigurasjon av Arduino CLI
 
 Åpne en terminal i VS Code (`Ctrl+Shift+\``) og kjør følgende tre kommandoer:
-
+NB: Hvis den første kommandoen ikke virker så må du kanskje restarte VS Code
+      Hvis det fortsatt ikke virker så har ikke arduino-cli havnet i PATH
+      Da du installerte Arduino CLI havna det en exe-fil i C:\Program Files\Arduino CLI eller en lignende plassering
+      Kopier plasseringen og legg den inn i PATH i Miljøvariabler. Det holder at den er enten i bruker eller system.
+      Jeg tipper system er blokkert for redigering, for ellers ville den nok vært der allerede.
+      Da må du igjen restarte VS-code for å oppdatere PATH som gjøres hver gang den starter opp.
+      
 ```bash
 # 1. Oppdater listen over kortpakker
 arduino-cli core update-index
