@@ -20,7 +20,7 @@ Med Wokwi og Arduino CLI kan dere kompilere koden og kjøre en full interaktiv s
 ## 2. Engangskonfigurasjon av Arduino CLI
 
 Åpne en terminal i VS Code (`Ctrl+Shift+\``) og kjør følgende tre kommandoer:
-NB: Hvis den første kommandoen ikke virker så må du kanskje restarte VS Code
+- NB: Hvis den første kommandoen ikke virker så må du kanskje restarte VS Code
 - Hvis det fortsatt ikke virker så har ikke arduino-cli havnet i PATH
 - Da du installerte Arduino CLI havna det en exe-fil i C:\Program Files\Arduino CLI eller en lignende plassering
 - Kopier plasseringen og legg den inn i PATH i Miljøvariabler. Det holder at den er enten i bruker eller system.
