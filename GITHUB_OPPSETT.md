@@ -49,6 +49,8 @@ Repoet → **Settings → Branches → Add branch ruleset/rule** for `main`:
 
 Repoet har allerede en ferdig workflow: [.github/workflows/build.yml](.github/workflows/build.yml). Den kjører automatisk `arduino-cli compile` på hver PR og på push til `main`, og viser ✅/❌ direkte på PR-siden — ingen ekstra oppsett nødvendig utover å velge den som required status check i steg 3. Dette gjør sjekklistepunktet "Kompilerer koden?" i [LARERPROSEDYRE.md](LARERPROSEDYRE.md) automatisk, i tillegg til den manuelle testen på egen maskin.
 
+> **OBS ved `paths-ignore`:** Workflowen hopper over rene `.md`-endringer for å spare byggetid. Hvis du har satt `compile` som required status check og en PR *kun* endrer `.md`-filer, kan GitHub vise sjekken som "venter" for alltid siden den aldri kjøres — merge blokkeres da til du enten legger til en ikke-.md endring i PR-en, eller (i Settings → Branches) skrur på **"Require branches to be up to date"**/bruker en fallback-jobb. I praksis skjer dette sjelden, siden elevene alltid endrer `sketch/sketch.ino`.
+
 ## 5. Sett opp "velg funksjon"-oversikten som Issues
 
 I stedet for et regneark eller en tavle i klasserommet: repoet har en ferdig **issue-mal** ([.github/ISSUE_TEMPLATE/velg-funksjon.md](.github/ISSUE_TEMPLATE/velg-funksjon.md)) elevene bruker til å "claime" en funksjon.
