@@ -88,6 +88,7 @@ Bruk denne malen på **alle** funksjonene dere implementerer, ikke bare `fagFarg
 | Enkel | `sjekkHelg`, `fagFarge`, `fagNavn`, `blinkLED`, `timeStartAnimasjon`, `friminuttAnimasjon`, `visMeny`, `sjekkSerialMeny` |
 | Middels | `visKlokkevisere`, `nedtellingBar`, `melodiSpiller`, `spillMelodi`, `visGjeldendeStatus`, `ferdigForDagenAnimasjon`, `helgeSluttAnimasjon`, `handterHelg` |
 | Avansert | `fyllPlan`, `beregnTidIgjen`, `hentGjeldendeFag`, `hentInternetTid`, `helgAnimasjon`, `planIndex`, `handterAktivitetsbytte` |
+| Hardware (samarbeid, ikke koding) | Kabling og lodding, 3D-printet ramme — se [Hardware-oppgaver](#hardware-oppgaver-krever-samarbeid) nederst |
 
 ---
 
@@ -245,3 +246,47 @@ Oppdager om faget/aktiviteten har endret seg siden forrige gang, og setter rikti
   - Hvis `nyttFag == FRIMINUTT`, sett `nyttFriminutt = true` og kall `spillMelodi(1)`.
   - Hvis `nyttFag != INGENTING` og `nyttFag != FRIMINUTT`, sett `nyTime = true` og kall `spillMelodi(2)`.
   - Husk å oppdatere `forrigeFag = nyttFag` til slutt!
+
+---
+
+## Hardware-oppgaver (krever samarbeid)
+
+I tillegg til kodefunksjonene over finnes det to fysiske oppgaver som noen i klassen bør ta ansvar for. De krever ikke koding, men er like viktige for at klokken skal fungere og se bra ut — og de er for store til å gjøre alene, så gå sammen i en gruppe på 2-4.
+
+### 🔌 Kabling og lodding
+
+**Hva skal gjøres?**
+1. Lodd ledninger fast på riktig pad/pinne på LED-ringen (DIN, VCC, GND) slik at den kan kobles til ESP32-en med dupontledninger.
+2. Koble ESP32-en til LED-ringen (og buzzer, hvis dere har en) med dupontledninger, i tråd med koblingstabellen i [README.md](README.md#hardware-tilkobling).
+3. Last opp koden og bekreft at LED-ringen faktisk lyser riktig — det er den endelige testen på at loddingen er god.
+
+**Hvorfor er dette viktig?**
+Uansett hvor god koden er, fungerer ikke klokken uten en pålitelig fysisk tilkobling. Dette er en praktisk øvelse i å lese en koblingstabell og omsette den til ekte hardware — en ferdighet som er like nyttig som programmering, og som gir umiddelbar, synlig tilbakemelding når noe er feil (eller riktig!).
+
+**Sikkerhet og hint:**
+- Loddebolten blir svært varm (250–350 °C) — bruk loddestativ, ikke ta på spissen/den varme delen, og jobb på et ikke-brennbart underlag.
+- Jobb gjerne to og to: én holder og varmer, én mater loddetinn.
+- Dobbeltsjekk polaritet (VCC/GND) *før* dere kobler til strøm — feilkobling kan ødelegge LED-ringen eller ESP32-en permanent.
+- Test loddepunktene med et multimeter (kontinuitetstest) før strøm kobles til, for å avsløre kalde loddepunkter eller utilsiktede kortslutninger.
+
+**Dokumentasjon:** Ta et bilde av den ferdige kablingen/loddingen og legg det ved i PR-en (f.eks. i en `dokumentasjon/hardware/`-mappe), sammen med en kort refleksjon: Hva var vanskelig? Hvordan testet dere at koblingen fungerte?
+
+### 🖨️ 3D-printet ramme/kabinett
+
+**Hva skal gjøres?**
+Design og skriv ut (eller lasérkutt, hvis 3D-printer ikke er tilgjengelig) en ramme som LED-ringen monteres i. Rammen må oppfylle disse kravene:
+
+1. **Reflekterende yttervegg:** LED-ene på ringen stråler i utgangspunktet rett utover og til siden. Rammen bør derfor ha en vegg/kant utenfor ringen som reflekterer lyset videre utover — bruk gjerne hvit/blank plastfarge, og vinkle veggen slik at lyset kastes utover i stedet for å forsvinne til værs.
+2. **Skillevegger mellom hver LED:** Lag en liten skillevegg mellom hver enkelt LED (som tynne "kile"-formede rom rundt hver LED, litt som et solur inndelt i skiver), slik at lyset fra én LED ikke blander seg med naboene. Det gjør det mye lettere å se nøyaktig hvilken LED som lyser — avgjørende for f.eks. klokkeviserne og nedtellingsbaren i koden.
+3. Rammen må ha plass til ESP32 og eventuell buzzer, og gjerne en åpning for USB-kabelen (strøm/opplasting).
+
+**Hvorfor er dette viktig?**
+Dette er en øvelse i produktdesign og fysikk: dere må måle det fysiske utstyret (antall LED-er, ringens diameter, avstanden mellom hver LED), lage en 3D-modell som passer nøyaktig, og tenke på hvordan lys sprer seg og reflekteres — ikke bare hvordan koden styrer fargene.
+
+**Hint:**
+- Start med å måle ringens ytre/indre diameter. Finn avstanden mellom hver LED («pitch») ved å dele ringens omkrets på antall LED-er (`NUM_LEDS` i koden).
+- Tenk på formen som et solur delt inn i like mange sektorer som det er LED-er — hver LED får sin egen kile-formede "lomme".
+- Gratis CAD-verktøy: Tinkercad (nybegynnervennlig, nettbasert) eller Fusion 360 (mer avansert, gratis for studenter).
+- Iterér! Print gjerne en liten testbit (f.eks. 1/8 av ringen) først for å sjekke mål og lysspredning, før dere printer hele rammen.
+
+**Dokumentasjon:** Legg ved et skjermbilde av 3D-modellen og et bilde av den ferdig monterte rammen, sammen med en kort refleksjon: Hvilke valg tok dere for å spre lyset godt utover og skille LED-ene fra hverandre? Hva ville dere gjort annerledes neste gang?
