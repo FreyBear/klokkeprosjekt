@@ -13,7 +13,7 @@ Med Wokwi og Arduino CLI kan dere kompilere koden og kjøre en full interaktiv s
 
 ### B. Installer Arduino CLI
 
-`arduino-cli.exe` kan lastes ned fra [Arduino CLI sine nettsider](https://arduino.cc/pro/cli) og legges i systemets PATH)
+`arduino-cli.exe` kan lastes ned fra [Arduino CLI sine nettsider](https://docs.arduino.cc/arduino-cli/installation/) og legges i systemets PATH)
 
 ---
 
