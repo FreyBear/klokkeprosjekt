@@ -2,19 +2,17 @@
 
 Denne filen dekker det som er spesifikt for at klassen jobber i en **GitHub Organization** (en delt konto som eier repoet, der elevene er medlemmer) med **GitHub Desktop**, i tillegg til det som allerede står i [LARERPROSEDYRE.md](LARERPROSEDYRE.md). Gjør disse stegene *før* elevene starter.
 
-> **Er du en annen lærer som fant dette repoet, og vil bruke det i din egen klasse?** Start med steg 0 under. Er du læreren som allerede eier dette repoet med egen klasse i gang, hopp rett til steg 1.
-
-## 0. Kopier repoet til din egen organisasjon (kun for nye lærere)
+## 0. Kopier repoet til din egen organisasjon
 
 ### Opprett en organisasjon (hvis du ikke har en fra før)
 
 1. Logg inn på github.com, trykk profilbildet ditt øverst til høyre → **Your organizations** → **New organization**.
 2. Velg planen **Free** (den dekker det dette opplegget trenger).
-3. Gi organisasjonen et navn (f.eks. `dittskolenavn-klasse26`), fyll inn resten og trykk **Create organization**. Du kan legge til elever som medlemmer senere (se steg 1 under).
+3. Gi organisasjonen et navn (f.eks. `dittskolenavn-klasse`), fyll inn resten og trykk **Create organization**. Du kan legge til elever som medlemmer senere (se steg 1 under).
 
 ### Kopier selve repoet inn i organisasjonen
 
-1. Gå til det originale repoet: [github.com/FreyBear/klokkeprosjekt_26](https://github.com/FreyBear/klokkeprosjekt_26).
+1. Gå til det originale repoet: [github.com/FreyBear/klokkeprosjekt](https://github.com/FreyBear/klokkeprosjekt).
 2. Trykk **Use this template → Create a new repository** øverst på siden *(hvis knappen ikke vises, bruk **Fork** øverst til høyre i stedet)*.
 3. Under "Owner", velg din egen organisasjon (ikke din private konto).
 4. Gi repoet et navn, velg **Private** (anbefalt for elevarbeid), og trykk **Create repository**.
@@ -26,14 +24,14 @@ Alle filene som beskriver opplegget (README, ELEVOPPGAVER, LARERPROSEDYRE, denne
 
 1. Gå til organisasjonens side på github.com → **People** → **Invite member**.
 2. Inviter med e-postadresse eller GitHub-brukernavn. Elevene må godta invitasjonen (sjekk e-post/varsel på github.com).
-3. *(Valgfritt, men anbefalt for større klasser)* Lag et **Team** (Organization → Teams → New team), f.eks. `klasse-26`, og legg alle elevene i det. Da kan du gi hele klassen tilgang til repoet i ett steg i stedet for én og én.
+3. *(Valgfritt, men anbefalt for større klasser)* Lag et **Team** (Organization → Teams → New team), f.eks. `klasse-YY`, og legg alle elevene i det. Da kan du gi hele klassen tilgang til repoet i ett steg i stedet for én og én.
 
 ## 2. Gi riktig tilgang til repoet
 
 Elevene jobber **direkte med branches i hovedrepoet** (ikke forks) slik README beskriver, så de trenger **Write**-tilgang for å kunne pushe branches og opprette PR-er:
 
 1. Repoet → **Settings → Collaborators and teams**.
-2. Legg til teamet `klasse-26` (eller enkeltelever) med rolle **Write**.
+2. Legg til teamet `klasse-YY` (eller enkeltelever) med rolle **Write**.
 3. La deg selv (lærer) ha **Admin** for å kunne endre branch protection og merge PR-er.
 
 > Elever med kun **Read**-tilgang kan ikke pushe branches — da må de forke repoet i stedet, som er en unødvendig ekstra kompleksitet for dette opplegget.
