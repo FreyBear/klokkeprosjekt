@@ -2,6 +2,8 @@
 
 En smart skole-timeplan-klokke bygget med ESP32 og en NeoPixel LED-ring. Prosjektet er et samarbeid — hver elev/gruppe implementerer én eller flere funksjoner, og alt samles i dette **repoet** (den delte prosjektmappen på GitHub, kort for "repository") gjennom **pull requests** (forkortet PR — en forespørsel om å få endringene dine inn i hovedkoden).
 
+> **Er du en lærer som vil bruke dette opplegget i egen klasse?** Se **[GITHUB_OPPSETT.md](GITHUB_OPPSETT.md)**, steg 0, for hvordan du kopierer repoet til din egen GitHub-organisasjon.
+
 ## Kom i gang
 
 1. Åpne `klokkeprosjekt_26.ino` i Arduino IDE.
@@ -34,9 +36,9 @@ Se **[ELEVOPPGAVER.md](ELEVOPPGAVER.md)** for:
 - Hvilken dokumentasjonsmal du skal bruke over funksjonen din
 - Beskrivelse, parametere, returverdi og hint for hver funksjon
 
-Velg én funksjon som ingen andre har tatt. Dette lager vi en liste på i klasserommet.
+Velg én funksjon som ingen andre har tatt, og opprett et **issue** for den på GitHub (**Issues → New issue → Velg en funksjon**) — det er slik hele klassen holder oversikt over hvem som har tatt hva.
 
-> **Lærer:** se [LARERPROSEDYRE.md](LARERPROSEDYRE.md) for hvordan pull requests skal gjennomgås og merges.
+> **Lærer:** se [LARERPROSEDYRE.md](LARERPROSEDYRE.md) for hvordan pull requests skal gjennomgås og merges, og [GITHUB_OPPSETT.md](GITHUB_OPPSETT.md) for engangs-oppsettet av organisasjonen.
 
 ---
 
@@ -91,15 +93,16 @@ En **Pull Request** er en forespørsel om at endringene i branchen din skal bli 
 
 1. Trykk **Create Pull Request** i GitHub Desktop — dette åpner GitHub i nettleseren.
 2. Sjekk at **base: main** ← **compare: din branch**.
-3. Skriv en kort beskrivelse:
+3. Beskrivelsesfeltet fylles automatisk ut med en mal — fyll inn:
    - Hvilken funksjon du har implementert
    - Hvordan du testet den
    - Eventuelle ting du er usikker på
+   - `Closes #<issue-nummeret>` fra funksjonen du claimet i steg "Hva skal jeg gjøre?"
 4. Trykk **Create Pull Request**.
 
 ### 8. Vent på review
 
-Læreren ser gjennom koden din, kommenterer eller ber om endringer ved behov, og merger PR-en inn i `main` når den er godkjent. Får du kommentarer: gjør endringene i Arduino IDE, gå tilbake til GitHub Desktop og gjenta steg 5-6 (commit + push) på samme branch — de dukker automatisk opp i den samme PR-en.
+Etter noen minutter kjører GitHub automatisk en test som sjekker at koden kompilerer — se etter en grønn hake ✅ (eller rød ❌) nederst på PR-siden. Deretter ser læreren gjennom koden din, kommenterer eller ber om endringer ved behov, og merger PR-en inn i `main` når den er godkjent. Får du kommentarer eller en rød ❌: gjør endringene i Arduino IDE, gå tilbake til GitHub Desktop og gjenta steg 5-6 (commit + push) på samme branch — de dukker automatisk opp i den samme PR-en.
 
 ### 9. Etterpå
 
@@ -110,7 +113,7 @@ Når PR-en er merget: bytt til `main` i GitHub Desktop og trykk **Fetch origin**
 ## Regler for pull requests
 
 - ✅ Én PR per funksjon (eller en liten, avgrenset gruppe funksjoner du jobber med samtidig).
-- ✅ Koden må kompilere før du åpner PR-en.
+- ✅ Koden må kompilere før du åpner PR-en (den automatiske CI-sjekken må også bli grønn før læreren kan merge).
 - ✅ Dokumentasjonskommentaren (se [ELEVOPPGAVER.md](ELEVOPPGAVER.md)) skal være med.
 - ❌ Ikke rør andre sine funksjoner eller `loop()`/`setup()` med mindre dere har avtalt det.
 - ❌ Ikke jobb direkte i `main`.

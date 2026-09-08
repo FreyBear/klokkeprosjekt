@@ -1,0 +1,29 @@
+name: Build Sketch
+
+# Kompilerer klokkeprosjekt_26.ino automatisk på hver PR og push mot main,
+# slik at både elev og lærer ser med det samme om koden bygger.
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Installer ESP32-kortpakke
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install esp32:esp32
+
+      - name: Installer biblioteker
+        run: arduino-cli lib install "Adafruit NeoPixel"
+
+      - name: Kompiler skissen
+        run: arduino-cli compile --fqbn esp32:esp32:esp32 .

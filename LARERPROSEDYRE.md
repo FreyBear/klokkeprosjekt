@@ -1,13 +1,13 @@
 # Lærerprosedyre – Gjennomgang og merging av elevarbeid
 
-Denne filen beskriver arbeidsflyten *du* (læreren) følger for å ta imot, teste og slå sammen (merge) pull requests (PR-er) fra elevene inn i `main`. Se [README.md](README.md) for elevenes arbeidsflyt, og [ELEVOPPGAVER.md](ELEVOPPGAVER.md) for hvilke funksjoner som skal implementeres og hvilken dokumentasjon som kreves.
+Denne filen beskriver arbeidsflyten *du* (læreren) følger for å ta imot, teste og slå sammen (merge) pull requests (PR-er) fra elevene inn i `main`. Se [README.md](README.md) for elevenes arbeidsflyt, [ELEVOPPGAVER.md](ELEVOPPGAVER.md) for hvilke funksjoner som skal implementeres og hvilken dokumentasjon som kreves, og **[GITHUB_OPPSETT.md](GITHUB_OPPSETT.md)** for engangs-oppsettet av organisasjonen, tilganger, branch protection og automatisk kompilerings-sjekk.
 
 ## Anbefalt oppsett før elevene starter
 
-1. **Beskytt `main`-branchen** på GitHub: Settings → Branches → Add rule for `main`.
-   - Kryss av for "Require a pull request before merging" — hindrer at noen (inkludert deg selv ved uhell) pusher rett til `main`.
-   - Vurder "Require approvals" hvis du vil at PR-er skal ha minst én godkjenning før de kan merges.
-2. **Før en oversikt over hvem som har tatt hvilken funksjon**, f.eks. i et regneark, en tavle i klasserommet, eller som GitHub Issues (ett issue per funksjon som elevene "claimer"). README.md ber elevene si ifra i klassen om hvilken funksjon de har valgt — pass på at listen faktisk holdes oppdatert.
+Se **[GITHUB_OPPSETT.md](GITHUB_OPPSETT.md)** for full sjekkliste (organisasjon, tilganger, branch protection, CI-sjekk og issue-basert funksjonsoversikt). Kort oppsummert:
+
+1. **Beskytt `main`-branchen**: Require a pull request before merging + require den automatiske CI-sjekken (`compile`) skal være grønn før merge.
+2. **Bruk GitHub Issues til å holde oversikt** over hvem som har tatt hvilken funksjon — elevene bruker den ferdige issue-malen "Velg en funksjon" (label `funksjon`) i stedet for et regneark eller en tavle i klasserommet.
 
 ---
 
@@ -19,7 +19,7 @@ Sjekkliste for hver PR før du merger:
 2. **Signatur uendret:** Funksjonsnavn, parametere og returtype skal være identiske med det som lå i malen.
 3. **`// Laget av:`** er fylt inn med elevens navn.
 4. **Dokumentasjonskommentar** følger malen i [ELEVOPPGAVER.md](ELEVOPPGAVER.md) (Funksjon / Laget av / Hva gjør den / Parametere / Returverdi / Refleksjon), og refleksjonsdelen er reelt utfylt (ikke bare tomme fraser).
-5. **Kompilerer koden?** Test lokalt (se under) i Arduino IDE før du godkjenner.
+5. **Kompilerer koden?** PR-siden viser automatisk en ✅/❌ fra CI-sjekken `compile` (se [GITHUB_OPPSETT.md](GITHUB_OPPSETT.md)) — men test gjerne lokalt også (se under) før du godkjenner, siden CI kun sjekker at koden bygger, ikke at den faktisk fungerer på ringen.
 6. Gi tilbakemelding som PR-kommentarer hvis noe må rettes, eller godkjenn/merge hvis alt er i orden.
 
 ---
@@ -63,7 +63,7 @@ Siden alle elever endrer den samme `.ino`-filen, kan en PR få "merge-konflikt" 
 
 ## Etter merge
 
-- Kryss av/oppdater oversikten over hvem som har levert hvilken funksjon.
+- Lukk issuet eleven opprettet for funksjonen (skjer automatisk hvis PR-beskrivelsen inneholder `Closes #<issue-nummer>`, se PR-malen).
 - Vurder å gjøre en helhetlig kompilering av `main` med jevne mellomrom etter hvert som flere funksjoner fylles inn — når flere reelle implementasjoner møtes (f.eks. `fyllPlan()` + `planIndex()` + `hentGjeldendeFag()`), kan det dukke opp integrasjonsfeil som ikke var synlige da hver funksjon ble testet alene.
 - Last opp `main` til en fysisk klokke innimellom, så elevene får se resultatet av arbeidet sitt i praksis.
 
