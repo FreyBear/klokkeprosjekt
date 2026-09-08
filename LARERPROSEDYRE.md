@@ -28,7 +28,7 @@ Sjekkliste for hver PR før du merger:
 
 1. Åpne GitHub Desktop, med dette repoet valgt.
 2. Trykk på branch-menyen øverst → fanen **Pull Requests** → velg PR-en du vil teste. GitHub Desktop bytter automatisk til den branchen lokalt.
-3. Åpne `klokkeprosjekt_26.ino` i Arduino IDE og kompiler (og gjerne last opp til en klokke) for å bekrefte at koden fungerer som forventet.
+3. Åpne `sketch/sketch.ino` i Arduino IDE og kompiler (og gjerne last opp til en klokke) for å bekrefte at koden fungerer som forventet.
 4. Finner du feil: skriv en kommentar i PR-en på GitHub (marker gjerne den aktuelle kodelinjen under "Files changed" → klikk `+`) og be eleven rette opp.
 
 ---

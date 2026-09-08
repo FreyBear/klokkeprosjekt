@@ -6,7 +6,7 @@ En smart skole-timeplan-klokke bygget med ESP32 og en NeoPixel LED-ring. Prosjek
 
 ## Kom i gang
 
-1. Åpne `klokkeprosjekt_26.ino` i Arduino IDE.
+1. Åpne `sketch/sketch.ino` i Arduino IDE (åpne selve `sketch.ino`-fila, ikke bare mappen).
 2. Installer nødvendig bibliotek: søk på **"Adafruit NeoPixel"** i Library Manager (Ctrl+Shift+I) og installer det.
 3. Sørg for at ESP32-kortpakken er installert (Tools → Board → Boards Manager → søk "esp32" av Espressif Systems), og velg riktig ESP32-kort under Tools → Board. Vi bruker den som heter "DOIT ESP32 DEVKIT V1"
 4. `WiFi.h`, `time.h` og `<sys/time.h>` følger automatisk med og trenger ingen installasjon.
@@ -68,7 +68,7 @@ Hver gang du starter en ny økt: åpne GitHub Desktop, sjekk at du står på bra
 
 ### 4. Implementer funksjonen din i Arduino IDE
 
-- Åpne `klokkeprosjekt_26.ino` fra mappen du klonet, i Arduino IDE.
+- Åpne `sketch/sketch.ino` fra mappen du klonet, i Arduino IDE.
 - Endre **kun** koden inni funksjonen(e) du har tatt ansvar for.
 - Ikke endre navn, parametere eller returtype på funksjonen.
 - Legg til `// Laget av: <Fornavn>` og dokumentasjonskommentaren beskrevet i [ELEVOPPGAVER.md](ELEVOPPGAVER.md).

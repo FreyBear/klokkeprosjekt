@@ -11,7 +11,7 @@
         "esp32:esp32:esp32",
         "--build-path",
         "${workspaceFolder}/build",
-        "${workspaceFolder}"
+        "${workspaceFolder}/sketch"
       ],
       "group": {
         "kind": "build",

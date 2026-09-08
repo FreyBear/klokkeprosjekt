@@ -1,6 +1,6 @@
 # Elevoppgaver – Klokkeprosjekt 2026
 
-Dere skal sammen bygge ferdig en smart skole-timeplan-klokke med en NeoPixel LED-ring. Koden i `klokkeprosjekt_26.ino` inneholder alle funksjonene dere trenger, men de fleste er tomme skjeletter merket med `// Laget av:` og `// TODO:`. Hver elev/gruppe velger én eller flere funksjoner og implementerer dem.
+Dere skal sammen bygge ferdig en smart skole-timeplan-klokke med en NeoPixel LED-ring. Koden i `sketch/sketch.ino` inneholder alle funksjonene dere trenger, men de fleste er tomme skjeletter merket med `// Laget av:` og `// TODO:`. Hver elev/gruppe velger én eller flere funksjoner og implementerer dem.
 
 ## Spilleregler
 

@@ -1,6 +1,6 @@
 name: Build Sketch
 
-# Kompilerer klokkeprosjekt_26.ino automatisk på hver PR og push mot main,
+# Kompilerer sketch/sketch.ino automatisk på hver PR og push mot main,
 # slik at både elev og lærer ser med det samme om koden bygger.
 on:
   pull_request:
@@ -26,4 +26,4 @@ jobs:
         run: arduino-cli lib install "Adafruit NeoPixel"
 
       - name: Kompiler skissen
-        run: arduino-cli compile --fqbn esp32:esp32:esp32 .
+        run: arduino-cli compile --fqbn esp32:esp32:esp32 sketch
